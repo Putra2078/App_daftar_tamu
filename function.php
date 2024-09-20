@@ -27,7 +27,7 @@ function tambah_tamu($data)
     $bertemu    = htmlspecialchars($data["bertemu"]);
     $kepentingan= htmlspecialchars($data["kepentingan"]);
 
-    $query = "INSERT INTO daftar_tamu VALUES ('$kode','$tanggal','$nama_tamu','$alamat','$no_hp','$bertemu','$kepentingan')";
+    $query = "INSERT INTO daftar_tamu_smakji VALUES ('$kode','$tanggal','$nama_tamu','$alamat','$no_hp','$bertemu','$kepentingan')";
 
     mysqli_query($koneksi, $query);
 
