@@ -15,7 +15,7 @@ function query($query) {
 }
 
 // function tambah data
-function tambah_user($data)
+function tambah_tamu($data)
 {
     global $koneksi;
 

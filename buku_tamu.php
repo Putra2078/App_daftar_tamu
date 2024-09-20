@@ -8,6 +8,24 @@ include_once('templates/header.php');
 <!-- Page Heading -->
 <h1 class="h3 mb-4 text-gray-800">Buku Tamu</h1>
 
+<?php
+if (isset($_POST['simpan'])) {
+  if (tambah_tamu($_POST) > 0) {
+?>
+      <div class="alert alert-danger" role="alert">
+        Data berhasil disimpan!
+      </div>
+      <?php
+  } else {
+    ?>
+    <div class="alert alert-danger" role="alert">
+      Data gagal disimpan!
+    </div>
+  <?php
+  }
+}
+?>
+
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -37,8 +55,8 @@ include_once('templates/header.php');
                                         <?php
                                         $no = 1;
 
-                                        $buku_tamu = query("SELECT * FROM daftar_tamu");
-                                        foreach($buku_tamu as $tamu) : ?>
+                                        $daftar_tamu = query("SELECT * FROM daftar_tamu");
+                                        foreach($daftar_tamu as $tamu) : ?>
                                         <tr>
                                             <td><?= $no++; ?></td>
                                             <td><?= $tamu['tanggal'] ?></td>
