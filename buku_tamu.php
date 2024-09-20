@@ -55,7 +55,7 @@ if (isset($_POST['simpan'])) {
                                         <?php
                                         $no = 1;
 
-                                        $daftar_tamu = query("SELECT * FROM daftar_tamu");
+                                        $daftar_tamu = query("SELECT * FROM daftar_tamu_smakji");
                                         foreach($daftar_tamu as $tamu) : ?>
                                         <tr>
                                             <td><?= $no++; ?></td>

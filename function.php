@@ -46,7 +46,7 @@ function ubah_tamu($data)
     $bertemu    = htmlspecialchars(($data["bertemu"]));
     $kepentingan= htmlspecialchars(($data["kepentingan"]));
 
-    $query = "UPDATE daftar_tamu SET
+    $query = "UPDATE daftar_tamu_smakji SET
     nama_tamu = '$nama_tamu',
     alamat    = '$alamat',
     no_hp   = '$no_hp',
@@ -62,7 +62,7 @@ function ubah_tamu($data)
 function hapus_tamu($id) {
     global $koneksi;
 
-    $query = "DELETE FROM daftar_tamu WHERE id_tamu = '$id'";
+    $query = "DELETE FROM daftar_tamu_smakji WHERE id_tamu = '$id'";
 
     mysqli_query($koneksi, $query);
 
