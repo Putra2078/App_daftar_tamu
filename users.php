@@ -26,7 +26,6 @@ if (isset($_POST['simpan'])) {
   }
 }
 ?>
-
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -75,7 +74,7 @@ if (isset($_POST['simpan'])) {
     $data = mysqli_fetch_array($query);
     $kodeuser = $data['kodeTerbesar'];
 
-    $urutan = (int) substr($kodeuser, 2, 3);
+    $urutan = (int) substr($kodeuser, 3, 2);
 
     $urutan++;
 
@@ -104,7 +103,7 @@ if (isset($_POST['simpan'])) {
           <div class="form-group row">
             <label for="password" class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-8">
-              <textarea class="form-control" name="password" id="password"></textarea>
+              <input type="password" class="form-control" id="password" name="password">
             </div>
           </div>
           <div class="form-group row">
