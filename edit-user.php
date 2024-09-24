@@ -44,7 +44,7 @@ if (isset($_POST['simpan'])) {
       </div>
       <div class="modal-body">
         <form method="post" action="">
-          <input type="hidden" name="id_user" id="id_user" value="<?= $kodeuser ?>">
+          <input type="hidden" name="id_user" id="id_user" value="<?= $id_user ?>">
           
           <div class="form-group row">
             <label for="username" class="col-sm-3 col-form-label">Username</label>

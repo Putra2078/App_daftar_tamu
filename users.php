@@ -26,6 +26,18 @@ if (isset($_POST['simpan'])) {
   }
 }
 ?>
+<?php
+    $query = mysqli_query($koneksi, "SELECT max(id_user) as kodeTerbesar FROM users");
+    $data = mysqli_fetch_array($query);
+    $kodeuser = $data['kodeTerbesar'];
+
+    $urutan = (int) substr($kodeuser, 3, 2);
+
+    $urutan++;
+
+    $huruf = "usr";
+    $kodeTamu = $huruf . sprintf("%02s", $urutan);
+?>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
                         <div class="card-header py-3">
