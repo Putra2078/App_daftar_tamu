@@ -30,7 +30,7 @@ if (isset($_POST['simpan'])) {
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Data Tamu</h1>
+<h1 class="h3 mb-4 text-gray-800">Data User</h1>
 
 <!-- Kontent edit data tamu -->
 <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="tambahModalLabel" aria-hidden="true">

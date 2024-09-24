@@ -69,7 +69,7 @@ if (isset($_POST['simpan'])) {
                                             <td><?= $no++; ?></td>
                                             <td><?= $user['username'] ?></td>
                                             <td><?= $user['user_role'] ?></td>
-                                            <td><a class="btn btn-success" href="edit-tamu.php?id=<?= $user['id_user']?>">Ubah</a>
+                                            <td><a class="btn btn-success" href="edit-user.php?id=<?= $user['id_user']?>">Ubah</a>
                                             <a onclick="confirm('Apakah anda yakin ingin menghapus data ini')" class="btn btn-danger" href="hapus-tamu.php?id=<?= $user['id_user']?>">Hapus</a>
                                           </td>
                                         </tr>
