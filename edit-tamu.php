@@ -3,8 +3,8 @@ include_once('templates/header.php');
 include_once('function.php');
 
 // jika ada id_tamu di url
-if (isset($_GET['id_tamu'])) {
-    $id_tamu = $_GET['id_tamu'];
+if (isset($_GET['id'])) {
+    $id_tamu = $_GET['id'];
 
     $data = query("SELECT * FROM daftar_tamu_smakji WHERE id_tamu = '$id_tamu'")[0];
 }
