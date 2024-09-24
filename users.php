@@ -86,45 +86,60 @@ if (isset($_POST['simpan'])) {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="tambahModalLabel">Tambah data user</h5>
+        <h5 class="modal-title" id="tambahModalLabel">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form method="post" action="">
-          <input type="hidden" name="id_tamu" value="<?= $kodeuser ?>">
+          <input type="hidden" name="id_tamu" value="<?= $kodeTamu ?>">
+          
           <div class="form-group row">
-            <label for="username" class="col-sm-3 col-form-label">Username</label>
+            <label for="nama_tamu" class="col-sm-3 col-form-label">Nama Tamu</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control" id="username" name="username">
+              <input type="text" class="form-control" id="nama_tamu" name="nama_tamu">
             </div>
           </div>
+          
           <div class="form-group row">
-            <label for="password" class="col-sm-3 col-form-label">Password</label>
+            <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
             <div class="col-sm-8">
-              <input type="password" class="form-control" id="password" name="password">
+              <textarea class="form-control" name="alamat" id="alamat"></textarea>
             </div>
           </div>
+          
           <div class="form-group row">
-            <label for="user_role" class="col-sm-3 col-form-label">User Role</label>
+            <label for="no_hp" class="col-sm-3 col-form-label">No. Telepon</label>
             <div class="col-sm-8">
-              <select class="form-control" name="user_role" id="user_role">
-                <option value="admin">Administrator</option>
-                <option value="operator">Operator</option>
-              </select>
+              <input type="text" class="form-control" id="no_hp" name="no_hp">
             </div>
           </div>
+          
+          <div class="form-group row">
+            <label for="bertemu" class="col-sm-3 col-form-label">Bertemu</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="bertemu" name="bertemu">
+            </div>
           </div>
+          
+          <div class="form-group row">
+            <label for="kepentingan" class="col-sm-3 col-form-label">Kepentingan</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="kepentingan" name="kepentingan">
+            </div>
+          </div>
+          
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
         <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
       </div>
-      </form>
+        </form>
     </div>
   </div>
 </div>
+
 
 <!-- /.container-fluid -->
 
