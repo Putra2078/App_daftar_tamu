@@ -93,40 +93,29 @@ if (isset($_POST['simpan'])) {
       </div>
       <div class="modal-body">
         <form method="post" action="">
-          <input type="hidden" name="id_tamu" value="<?= $kodeTamu ?>">
+          <input type="hidden" name="id_user" id="id_user" value="<?= $kodeuser ?>">
           
           <div class="form-group row">
-            <label for="nama_tamu" class="col-sm-3 col-form-label">Nama Tamu</label>
+            <label for="username" class="col-sm-3 col-form-label">Username</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control" id="nama_tamu" name="nama_tamu">
+              <input type="text" class="form-control" id="username" name="username">
             </div>
           </div>
           
           <div class="form-group row">
-            <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
+            <label for="password" class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-8">
-              <textarea class="form-control" name="alamat" id="alamat"></textarea>
+              <input type="password" class="form-control" id="password" name="password">
             </div>
           </div>
           
           <div class="form-group row">
-            <label for="no_hp" class="col-sm-3 col-form-label">No. Telepon</label>
+            <label for="user_role" class="col-sm-3 col-form-label">User Role</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control" id="no_hp" name="no_hp">
-            </div>
-          </div>
-          
-          <div class="form-group row">
-            <label for="bertemu" class="col-sm-3 col-form-label">Bertemu</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="bertemu" name="bertemu">
-            </div>
-          </div>
-          
-          <div class="form-group row">
-            <label for="kepentingan" class="col-sm-3 col-form-label">Kepentingan</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="kepentingan" name="kepentingan">
+              <select name="user_role" id="user_role">
+                <option value="admin">Administrator</option>
+                <option value="operator">Operator</option>
+              </select>
             </div>
           </div>
           
