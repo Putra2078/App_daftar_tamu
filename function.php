@@ -85,7 +85,7 @@ function ubah_user($data) {
     $user_role = htmlspecialchars($data["user_role"]);
 
     $query = "UPDATE users SET
-    username    = '$username'
+    username    = '$username',
     user_role   = '$user_role'
     WHERE id_user = '$kode'";
 
@@ -98,6 +98,16 @@ function hapus_tamu($id) {
     global $koneksi;
 
     $query = "DELETE FROM daftar_tamu_smakji WHERE id_tamu = '$id'";
+
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+
+function hapus_user($id) {
+    global $koneksi;
+
+    $query = "DELETE FROM users WHERE id_user = '$id'";
 
     mysqli_query($koneksi, $query);
 

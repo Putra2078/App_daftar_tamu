@@ -36,7 +36,7 @@ if (isset($_POST['simpan'])) {
     $urutan++;
 
     $huruf = "usr";
-    $kodeTamu = $huruf . sprintf("%02s", $urutan);
+    $kodeuser = $huruf . sprintf("%02s", $urutan);
 ?>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -91,7 +91,7 @@ if (isset($_POST['simpan'])) {
     $urutan++;
 
     $huruf = "usr";
-    $kodeTamu = $huruf . sprintf("%02s", $urutan);
+    $kodeuser = $huruf . sprintf("%02s", $urutan);
 ?>
 <!-- Modal Tambah -->
 <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="tambahModalLabel" aria-hidden="true">
