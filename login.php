@@ -17,7 +17,7 @@ if(isset($_POST['login'])) {
             $_SESSION['username'] = $username;
 
             // login berhasil
-            header("Location: index.php");
+            header("Location: users.php");
             exit;
         }
     }

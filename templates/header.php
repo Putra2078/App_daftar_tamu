@@ -3,7 +3,7 @@
 session_start();
 
 // cek apabila tidak ada user yang login maka akan di redirect ke halaman login
-if (!isset($_SESSION['login'])) {
+if (isset($_SESSION['login'])) {
     header("location: login.php");
 }
 
@@ -71,14 +71,14 @@ if (isset($_SESSION['login'])) {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="login.php">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="buku_tamu.php" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="buku_tamu.php"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="bi bi-book"></i>
                     <span>Buku Tamu</span>
@@ -87,9 +87,8 @@ if (isset($_SESSION['login'])) {
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="laporan.php"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
                     <span>Laporan</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -106,9 +105,8 @@ if (isset($_SESSION['login'])) {
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link" href="users.php">
+                    <span>Users</span></a>
             </li>
 
             <!-- Sidebar Toggler (Sidebar) -->
