@@ -3,14 +3,12 @@
 session_start();
 
 // cek apabila tidak ada user yang login maka akan di redirect ke halaman login
-if (isset($_SESSION['login'])) {
-    header("location: login.php");
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
 }
 
 // cek bila ada user yang sudah login maka akan redirect ke halaman dashboard
-if (isset($_SESSION['login'])) {
-    header('Location: index.php');
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -57,17 +55,6 @@ if (isset($_SESSION['login'])) {
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <?php
-            // cek apabila ada user login maka tampilkan logout
-            if (isset($_SESSION['login'])) :
-            ?>
-            <li class=nav-item>
-                <a class="nav-link" href="logout.php">
-                    <i class="fas fa-fw fa-power-off"></i><span>Logout</span></a>
-            </li>
-            <?php endif; ?>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
@@ -108,6 +95,21 @@ if (isset($_SESSION['login'])) {
                 <a class="nav-link" href="users.php">
                     <span>Users</span></a>
             </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <?php
+            // var_dump($_SESSION['login']);
+            // cek apabila ada user login maka tampilkan logout
+            if (isset($_SESSION['login'])) :
+            ?>
+            <li class=nav-item>
+                <a class="nav-link" href="logout.php">
+                    <i class="fas fa-fw fa-power-off"></i><span>Logout</span></a>
+            </li>
+            <?php endif; ?>
+
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

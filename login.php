@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'koneksi.php';
 if(isset($_POST['login'])) {
     $username = $_POST['username'];

@@ -1,5 +1,6 @@
 <?php
 include_once('templates/header.php');
+include_once('function.php');
 ?>
 
 <!-- Begin Page Content -->
@@ -79,7 +80,7 @@ include_once('templates/header.php');
                         $no = 1;
 
                         $daftar_tamu = query("SELECT * FROM daftar_tamu_smakji WHERE tanggal BETWEEN '$p_awal' AND '$p_akhir' ");
-                        foreach ($buku_tamu as $tamu) : ?>
+                        foreach ($daftar_tamu as $tamu) : ?>
                             <tr>
                                 <td><?= $no++; ?></td>
                                 <td><?= $tamu['tanggal'] ?></td>
