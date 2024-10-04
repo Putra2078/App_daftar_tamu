@@ -1,6 +1,26 @@
 <?php
 include_once('function.php');
 include_once('templates/header.php');
+
+if (isset($_GET['id'])) {
+  $id = $_GET['id'];
+}
+if (isset($_SESSION['role'])) {
+  if ($_SESSION['role'] == 'admin') {
+    ?>
+    <div class="alert alert-danger" role="alert">
+      Selamat Datang!
+    </div>
+    <?php
+} else {
+  ?>
+  <div class="alert alert-danger" role="alert">
+    Anda tidak memiliki akses untuk mengakses halaman ini.
+    </div>
+    <?php
+    exit;
+}
+}
 ?>
 
 <!-- Begin Page Content -->
