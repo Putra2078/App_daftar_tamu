@@ -1,6 +1,18 @@
 <?php
 include_once('templates/header.php');
 include_once('function.php');
+
+if (isset($_POST['tampilkan'])) {
+    $p_awal = $_POST['p_awal'];
+    $p_akhir = $_POST['p_akhir'];
+
+    $link ="export-laporan.php?cari=true&p_awal=$p_awal&p_akhir=$p_akhir";
+    // query sesuai dengan keyword
+    $buku_tamu = query("SELECT * FROM daftar_tamu_smakji WHERE tanggal BETWEEN '$p_awal' AND '$p_akhir' ");
+} else {
+    // query ambil semua data buku tamu
+    $buku_tamu = query("SELECT * FROM daftar_tamu_smakji ORDER BY tanggal DESC");
+}
 ?>
 
 <!-- Begin Page Content -->
@@ -54,6 +66,12 @@ include_once('function.php');
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
+        <a href=""<?= isset($_POST['tampilkan']) ? $link : "export-laporan.php"; ?> target="_blank" class="btn btn-success btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-file-excel"></i>
+            </span>
+            <span class="text">Export Laporan</span>
+        </a>
         <span class="text">Tabel Histori Tamu</span>
     </div>
     <div class="card-body">
@@ -73,6 +91,7 @@ include_once('function.php');
                 </thead>
                 <tbody>
                     <?php
+                    // penomoran auto-increment
                     if (isset($_POST['tampilkan'])) {
                         $p_awal = $_POST['p_awal'];
                         $p_akhir = $_POST['p_akhir'];

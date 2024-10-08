@@ -1,0 +1,18 @@
+{
+    "name": "lenovo/buku_tamu_smakji",
+    "description": "aldi",
+    "autoload": {
+        "psr-4": {
+            "Lenovo\\BukuTamuSmakji\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Putra2078",
+            "email": "alphaaldiansyah@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^3.3"
+    }
+}
