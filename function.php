@@ -27,7 +27,13 @@ function tambah_tamu($data)
     $bertemu    = htmlspecialchars($data["bertemu"]);
     $kepentingan= htmlspecialchars($data["kepentingan"]);
 
-    $query = "INSERT INTO daftar_tamu_smakji VALUES ('$kode','$tanggal','$nama_tamu','$alamat','$no_hp','$bertemu','$kepentingan')";
+    // upload gambar
+    $gambar = uploadGambar();
+    if (!$gambar) {
+        return false;
+    }
+
+    $query = "INSERT INTO daftar_tamu_smakji VALUES ('$kode','$tanggal','$nama_tamu','$alamat','$no_hp','$bertemu','$kepentingan', '$gambar')";
 
     mysqli_query($koneksi, $query);
 
@@ -45,13 +51,20 @@ function ubah_tamu($data)
     $no_hp    = htmlspecialchars($data["no_hp"]);
     $bertemu    = htmlspecialchars($data["bertemu"]);
     $kepentingan= htmlspecialchars($data["kepentingan"]);
+    $gambar = uploadGambar();
+    if (!$gambar) {
+        return false;
+    }
+    
+
 
     $query = "UPDATE daftar_tamu_smakji SET
     nama_tamu = '$nama_tamu',
     alamat    = '$alamat',
     no_hp   = '$no_hp',
     bertemu   = '$bertemu',
-    kepentingan = '$kepentingan'
+    kepentingan = '$kepentingan',
+    gambar      = '$gambar'
     WHERE id_tamu = '$id'";
     mysqli_query($koneksi, $query);
 
@@ -160,7 +173,7 @@ function uploadGambar() {
     $namaFileBaru .= '.';
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, 'assets/upload_gambar/' . $namaFileBaru);
+    move_uploaded_file($tmpName, 'asset/upload_gambar/' . $namaFileBaru);
 
     return $namaFileBaru;
 
