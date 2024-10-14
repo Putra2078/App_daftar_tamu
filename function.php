@@ -129,4 +129,47 @@ function ganti_password($data) {
 
     return mysqli_affected_rows($koneksi);
 }
+
+function uploadGambar() {
+    $namaFile = $_FILES['gambar']['name'];
+    $ukuranFile = $_FILES['gambar']['size'];
+    $error = $_FILES['gambar']['error'];
+    $tmpName = $_FILES['gambar']['tmp_name'];
+
+    // cek apakah yang di unggah adalah file gambar
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>alert('Maaf, Anda harus mengunggah file gambar!');
+        </script>";
+        return false;
+    }
+
+    // cek jika ukuran nya terlalu besar
+    if ($ukuranFile > 15000000) {
+        echo "<script>
+        alert('ukuran gambar terlalu besar!');
+        </script>";
+        return false;
+    }
+
+    // jika lolos pengecekan, gambar akan diunggah
+    // generate nama gambar baru dengan uniqid()
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName, 'assets/upload_gambar/' . $namaFileBaru);
+
+    return $namaFileBaru;
+
+    // cek apakah tidak ada gambar yang di unggah
+    if ($error === 4) {
+        echo "<script>
+        alert('pilih gambar terlebih dahulu!');
+        </script>";
+    }
+    return false;
+}
 ?>
